@@ -4,10 +4,10 @@ from flaskext.mysql import MySQL
 
 app = Flask(__name__)
 # Configure MySQL connection
-app.config['MYSQL_DATABASE_HOST'] = 'localhost'
-app.config['MYSQL_DATABASE_USER'] = 'root'
-app.config['MYSQL_DATABASE_PASSWORD'] = 'root'
-app.config['MYSQL_DATABASE_DB'] = 'color_db'
+app.config['MYSQL_DATABASE_HOST'] = os.environ.get('MYSQL_HOST')
+app.config['MYSQL_DATABASE_USER'] = os.environ.get('MYSQL_USER')
+app.config['MYSQL_DATABASE_PASSWORD'] = os.environ.get('MYSQL_PASSWORD')
+app.config['MYSQL_DATABASE_DB'] = os.environ.get('MYSQL_DB')
 
 
 def initDB():
